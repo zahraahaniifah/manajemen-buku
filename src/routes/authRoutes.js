@@ -11,28 +11,28 @@ const {
 /**
  * @openapi
  * /api/auth/register:
- *   post:
- *     summary: Registrasi user baru
- *     tags:
- *       - Authentication
- *     requestBody:
- *       required: true
- *       content:
- *         application/json:
- *           schema:
- *             type: object
- *             properties:
- *               name:
- *                 type: string
- *               email:
- *                 type: string
- *               password:
- *                 type: string
- *               role:
- *                 type: string
- *     responses:
- *       201:
- *         description: Registrasi berhasil
+ * post:
+ * summary: Registrasi user baru
+ * tags:
+ * - Authentication
+ * requestBody:
+ * required: true
+ * content:
+ * application/json:
+ * schema:
+ * type: object
+ * properties:
+ * name:
+ * type: string
+ * email:
+ * type: string
+ * password:
+ * type: string
+ * role:
+ * type: string
+ * responses:
+ * 201:
+ * description: Registrasi berhasil
  */
 
 router.post("/register", authController.register);
@@ -40,24 +40,24 @@ router.post("/register", authController.register);
 /**
  * @openapi
  * /api/auth/login:
- *   post:
- *     summary: Login user
- *     tags:
- *       - Authentication
- *     requestBody:
- *       required: true
- *       content:
- *         application/json:
- *           schema:
- *             type: object
- *             properties:
- *               email:
- *                 type: string
- *               password:
- *                 type: string
- *     responses:
- *       200:
- *         description: Login berhasil
+ * post:
+ * summary: Login user
+ * tags:
+ * - Authentication
+ * requestBody:
+ * required: true
+ * content:
+ * application/json:
+ * schema:
+ * type: object
+ * properties:
+ * email:
+ * type: string
+ * password:
+ * type: string
+ * responses:
+ * 200:
+ * description: Login berhasil
  */
 
 router.post("/login", authController.login);
@@ -65,13 +65,13 @@ router.post("/login", authController.login);
 /**
  * @openapi
  * /api/auth/token/refresh:
- *   post:
- *     summary: Refresh access token
- *     tags:
- *       - Authentication
- *     responses:
- *       200:
- *         description: Access token baru berhasil dibuat
+ * post:
+ * summary: Refresh access token
+ * tags:
+ * - Authentication
+ * responses:
+ * 200:
+ * description: Access token baru berhasil dibuat
  */
 
 router.post("/token/refresh", authController.refreshToken);
@@ -79,15 +79,15 @@ router.post("/token/refresh", authController.refreshToken);
 /**
  * @openapi
  * /api/auth/profile:
- *   get:
- *     summary: Lihat profile user
- *     tags:
- *       - Authentication
- *     security:
- *       - bearerAuth: []
- *     responses:
- *       200:
- *         description: Data profile user
+ * get:
+ * summary: Lihat profile user
+ * tags:
+ * - Authentication
+ * security:
+ * - bearerAuth: []
+ * responses:
+ * 200:
+ * description: Data profile user
  */
 
 router.get(
@@ -104,15 +104,15 @@ router.get(
 /**
  * @openapi
  * /api/auth/change-password:
- *   put:
- *     summary: Ganti password
- *     tags:
- *       - Authentication
- *     security:
- *       - bearerAuth: []
- *     responses:
- *       200:
- *         description: Password berhasil diubah
+ * put:
+ * summary: Ganti password
+ * tags:
+ * - Authentication
+ * security:
+ * - bearerAuth: []
+ * responses:
+ * 200:
+ * description: Password berhasil diubah
  */
 
 router.put(
@@ -124,15 +124,15 @@ router.put(
 /**
  * @openapi
  * /api/auth/admin/dashboard:
- *   get:
- *     summary: Dashboard khusus admin
- *     tags:
- *       - Authentication
- *     security:
- *       - bearerAuth: []
- *     responses:
- *       200:
- *         description: Dashboard admin berhasil diakses
+ * get:
+ * summary: Dashboard khusus admin
+ * tags:
+ * - Authentication
+ * security:
+ * - bearerAuth: []
+ * responses:
+ * 200:
+ * description: Dashboard admin berhasil diakses
  */
 
 router.get(
@@ -149,15 +149,15 @@ router.get(
 /**
  * @openapi
  * /api/auth/content/review:
- *   get:
- *     summary: Review konten moderator dan admin
- *     tags:
- *       - Authentication
- *     security:
- *       - bearerAuth: []
- *     responses:
- *       200:
- *         description: Konten review berhasil diakses
+ * get:
+ * summary: Review konten moderator dan admin
+ * tags:
+ * - Authentication
+ * security:
+ * - bearerAuth: []
+ * responses:
+ * 200:
+ * description: Konten review berhasil diakses
  */
 
 router.get(
