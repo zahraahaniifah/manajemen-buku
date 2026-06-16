@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE `users` ADD COLUMN `refreshToken` VARCHAR(191) NULL,
+    MODIFY `role` ENUM('ADMIN', 'USER', 'MODERATOR') NOT NULL DEFAULT 'USER';
