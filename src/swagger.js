@@ -9,10 +9,15 @@ const options = {
             description: 'Dokumentasi API manajemen buku',
         },
         servers: [
-            {
-                url: 'mysql://root:KUfDmTulPRTimRPjLFJkWVSppdpcvpBN@mysql.railway.internal:3306/railway',
-            },
-        ],
+    {
+        url: 'https://manajemen-buku-production.up.railway.app', 
+        description: 'Production Server (Railway)'
+    },
+    {
+        url: 'http://localhost:8080',
+        description: 'Local Server'
+    }
+],
     },
     apis: ['./src/routes/*.js'],
 };
