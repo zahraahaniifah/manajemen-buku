@@ -9,7 +9,7 @@ const {
 } = require("../middlewares/authMiddleware");
 
 /**
- * @swagger
+ * @openapi
  * /api/auth/register:
  *   post:
  *     summary: Registrasi user baru
@@ -38,7 +38,7 @@ const {
 router.post("/register", authController.register);
 
 /**
- * @swagger
+ * @openapi
  * /api/auth/login:
  *   post:
  *     summary: Login user
@@ -63,7 +63,7 @@ router.post("/register", authController.register);
 router.post("/login", authController.login);
 
 /**
- * @swagger
+ * @openapi
  * /api/auth/token/refresh:
  *   post:
  *     summary: Refresh access token
@@ -77,7 +77,7 @@ router.post("/login", authController.login);
 router.post("/token/refresh", authController.refreshToken);
 
 /**
- * @swagger
+ * @openapi
  * /api/auth/profile:
  *   get:
  *     summary: Lihat profile user
@@ -102,7 +102,7 @@ router.get(
 );
 
 /**
- * @swagger
+ * @openapi
  * /api/auth/change-password:
  *   put:
  *     summary: Ganti password
@@ -122,7 +122,7 @@ router.put(
 );
 
 /**
- * @swagger
+ * @openapi
  * /api/auth/admin/dashboard:
  *   get:
  *     summary: Dashboard khusus admin
@@ -147,7 +147,7 @@ router.get(
 );
 
 /**
- * @swagger
+ * @openapi
  * /api/auth/content/review:
  *   get:
  *     summary: Review konten moderator dan admin

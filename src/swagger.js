@@ -9,19 +9,17 @@ const options = {
             description: 'Dokumentasi API manajemen buku',
         },
         servers: [
-    {
-        url: 'https://manajemen-buku-production.up.railway.app', 
-        description: 'Production Server (Railway)'
+            { url: 'https://manajemen-buku-production.up.railway.app', description: 'Production Server (Railway)' },
+            { url: 'http://localhost:8080', description: 'Local Server' }
+        ],
+        components: {
+            securitySchemes: {
+                bearerAuth: { type: 'http', scheme: 'bearer', bearerFormat: 'JWT' }
+            }
+        }
     },
-    {
-        url: 'http://localhost:8080',
-        description: 'Local Server'
-    }
-],
-    },
-    apis: ['./src/*.js'],
+    apis: ['./app.js', './routes/*.js'], // Membaca app.js dan semua file di dalam folder routes
 };
 
 const swaggerSpec = swaggerJsdoc(options);
-
 module.exports = swaggerSpec;
