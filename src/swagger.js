@@ -16,9 +16,68 @@ const options = {
             securitySchemes: {
                 bearerAuth: { type: 'http', scheme: 'bearer', bearerFormat: 'JWT' }
             }
+        },
+        // KITA TULIS RUTE-RUTENYA DI SINI BIAR GA SENSITIF SPASI LAGI
+        paths: {
+            '/health': {
+                get: {
+                    summary: 'Mengecek status kesehatan server backend',
+                    responses: {
+                        200: { description: 'Server berjalan dengan baik' }
+                    }
+                }
+            },
+            '/api/auth/register': {
+                post: {
+                    summary: 'Registrasi user baru',
+                    tags: ['Authentication'],
+                    requestBody: {
+                        required: true,
+                        content: {
+                            'application/json': {
+                                schema: {
+                                    type: 'object',
+                                    properties: {
+                                        name: { type: 'string' },
+                                        email: { type: 'string' },
+                                        password: { type: 'string' },
+                                        role: { type: 'string' }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    responses: {
+                        201: { description: 'Registrasi berhasil' }
+                    }
+                }
+            },
+            '/api/auth/login': {
+                post: {
+                    summary: 'Login user',
+                    tags: ['Authentication'],
+                    requestBody: {
+                        required: true,
+                        content: {
+                            'application/json': {
+                                schema: {
+                                    type: 'object',
+                                    properties: {
+                                        email: { type: 'string' },
+                                        password: { type: 'string' }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    responses: {
+                        200: { description: 'Login berhasil' }
+                    }
+                }
+            }
         }
     },
-    apis: ['./app.js', './routes/*.js'], // Membaca app.js dan semua file di dalam folder routes
+    apis: [], // Dikosongkan saja karena semua rute sudah dipindah ke atas!
 };
 
 const swaggerSpec = swaggerJsdoc(options);

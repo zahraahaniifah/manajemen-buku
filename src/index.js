@@ -1,4 +1,4 @@
-const app = require('./app'); // Memanggil racikan dari app.js
+const app = require('./app.js');
 const PORT = process.env.PORT || 8080; 
 
 app.listen(PORT, "0.0.0.0", () => {
