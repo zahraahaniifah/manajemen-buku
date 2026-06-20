@@ -63,15 +63,24 @@ router.post("/register", authController.register);
 router.post("/login", authController.login);
 
 /**
- * @openapi
+ * @swagger
  * /api/auth/token/refresh:
- * post:
- * summary: Refresh access token
- * tags:
- * - Authentication
- * responses:
- * 200:
- * description: Access token baru berhasil dibuat
+ *   post:
+ *     summary: Refresh access token
+ *     tags:
+ *       - Authentication
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               refreshToken:
+ *                 type: string
+ *     responses:
+ *       200:
+ *         description: Token berhasil diperbarui
  */
 
 router.post("/token/refresh", authController.refreshToken);
