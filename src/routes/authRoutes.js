@@ -65,22 +65,22 @@ router.post("/login", authController.login);
 /**
  * @swagger
  * /api/auth/token/refresh:
- *   post:
- *     summary: Refresh access token
- *     tags:
- *       - Authentication
- *     requestBody:
- *       required: true
- *       content:
- *         application/json:
- *           schema:
- *             type: object
- *             properties:
- *               refreshToken:
- *                 type: string
- *     responses:
- *       200:
- *         description: Token berhasil diperbarui
+ * post:
+ * summary: Refresh access token
+ * tags:
+ * - Authentication
+ * requestBody:
+ * required: true
+ * content:
+ * application/json:
+ * schema:
+ * type: object
+ * properties:
+ * refreshToken:
+ * type: string
+ * responses:
+ * 200:
+ * description: Token berhasil diperbarui
  */
 
 router.post("/token/refresh", authController.refreshToken);
@@ -117,8 +117,17 @@ router.get(
  * summary: Ganti password
  * tags:
  * - Authentication
- * security:
- * - bearerAuth: []
+ * requestBody:
+ * required: true
+ * content:
+ * application/json:
+ * schema:
+ * type: object
+ * properties:
+ * oldPassword:
+ * type: string
+ * newPassword:
+ * type: string
  * responses:
  * 200:
  * description: Password berhasil diubah

@@ -23,9 +23,9 @@ name: z.string().min(3, {
     }),
 
   role: z
-    .enum(["USER", "MODERATOR"])
+    .enum(["user", "admin"])
     .optional()
-    .default("USER"),
+    .default("user"),
 });
 
 const loginSchemaFull = z.object({
